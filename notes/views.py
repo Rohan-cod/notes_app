@@ -1,6 +1,6 @@
 from django.views.generic import ListView, TemplateView
 from .models import Note
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .forms import NoteForm
 from django.urls import reverse_lazy
 
@@ -17,4 +17,18 @@ class NoteCreateView(CreateView):
 
 class HomePageView(TemplateView):
 	template_name = 'index.html'
+
+
+class NoteUpdateView(UpdateView):
+    model = Note
+    form_class = NoteForm
+    template_name = 'note_edit.html'
+    success_url = reverse_lazy('note_list')
+
+class NoteDeleteView(DeleteView):
+    model = Note
+    template_name = 'note_delete.html'
+    success_url = reverse_lazy('note_list')
+
+
 
