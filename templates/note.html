@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Notes{% endblock title %}
+
+{% block content %}
+  <h1>Django Note Taking App</h1>
+  <hr>
+
+  <h2>Notes</h2>
+
+  {% for note in object_list %}
+    <div class="card">
+      <div class="card-header">
+        <span class="font-weight-bold">{{ note.text }}</span> &middot;
+      </div> 
+    </div>
+    <br />
+  {% endfor %}
+  
+{% endblock content %}
+
