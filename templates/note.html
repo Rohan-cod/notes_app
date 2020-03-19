@@ -10,7 +10,7 @@
   {% for note in object_list %}
     <div class="card">
       <div class="card-header">
-        <span class="font-weight-bold">{{ note.text }}</span> &middot;
+        <a href="{% url 'note_detail' note.pk %}"><span class="font-weight-bold">{{ note.text }}</span></a>  &middot;
       </div> 
       <div class="card-body">
         <a href="{% url 'note_edit' note.pk %}">Edit</a> |
