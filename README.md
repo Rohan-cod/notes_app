@@ -1,5 +1,5 @@
 # Notes App
-A note taking app using django framework. Frontend using html, css and bootstrap. Add notes so you never miss anything. 
+A note taking app using django framework. Frontend using html, css and bootstrap. Add notes so you never miss anything. A note can only be edited or deleted by the user who created it.
 
 ## Requirements
 
