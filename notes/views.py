@@ -13,6 +13,7 @@ class NoteListView(LoginRequiredMixin, ListView):
 	model = Note
 	template_name = 'note.html'
 	login_url = 'login'
+	paginate_by = 5
 
 class NoteCreateView(LoginRequiredMixin, CreateView):
 	model = Note
