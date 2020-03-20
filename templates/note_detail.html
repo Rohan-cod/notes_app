@@ -4,10 +4,10 @@
 <div>
 
   <h2>{{ object.text }}</h2>
-    <p>by {{ object.author }} | {{ object.created }}</p>
+    <p><i class="glyphicon glyphicon-user"></i> {{ object.author }} &nbsp;<span class="glyphicon glyphicon-option-vertical"></span>&nbsp; <span class="glyphicon glyphicon-calendar"></span> {{ object.created }}</p>
 
-  <p><a href="{% url 'note_edit' note.pk %}">Edit</a> |
-    <a href="{% url 'note_delete' note.pk %}">Delete</a></p>
-  <p>Back to <a href="{% url 'note_list' %}">All Notes</a>.</p>
+  <p><a href="{% url 'note_edit' note.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> &nbsp;<span class="glyphicon glyphicon-option-vertical"></span>&nbsp;
+    <a href="{% url 'note_delete' note.pk %}"><span class="glyphicon glyphicon-trash"></span></a></p>
+  <p>Back to <a href="{% url 'note_list' %}"><span class="glyphicon glyphicon-home"></span></span></a></p>
 </div>
 {% endblock content %}

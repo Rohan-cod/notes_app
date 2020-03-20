@@ -10,14 +10,19 @@
   {% for note in object_list %}
     <div class="card">
       <div class="card-header">
-        <a href="{% url 'note_detail' note.pk %}"><span class="font-weight-bold">{{ note.text }}</span></a>  &middot;
+        <a href="{% url 'note_detail' note.pk %}"><i class="fas fa-file"></i> </a><span class="font-weight-bold">{{ note.text }}</span>  &middot;
+        <br>
+        <span class="text-muted"><i class="glyphicon glyphicon-user"></i> {{ note.author }} &nbsp;<span class="glyphicon glyphicon-option-vertical"></span>&nbsp;
+         <span class="glyphicon glyphicon-calendar"></span> {{ note.created }}</span>
       </div> 
       <div class="card-body">
-        <a href="{% url 'note_edit' note.pk %}">Edit</a> |
-        <a href="{% url 'note_delete' note.pk %}">Delete</a>
+        <a href="{% url 'note_edit' note.pk %}"><span class="glyphicon glyphicon-pencil">  </span> </a>  &nbsp;<span class="glyphicon glyphicon-option-vertical"></span>&nbsp;
+         <a href="{% url 'note_delete' note.pk %}"><span class="glyphicon glyphicon-trash"></span></a>
       </div>
     </div>
     <br />
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   {% endfor %}
   
 {% endblock content %}
