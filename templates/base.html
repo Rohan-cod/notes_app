@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,
     initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
       <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
     <title>{% block title %}Notes App{% endblock title %}</title>
@@ -38,8 +39,8 @@
                 <i class="glyphicon glyphicon-user" class="nav navbar-nav navbar-right"></i> {{ user.username }}
               </a>
               <div class="dropdown-menu "\
-              aria-labelledby="userMenu">
-                <a class="dropdown-item" href="{% url 'logout' %} ">
+              aria-labelledby="userMenu" color: #e5dbdb; background-color: #425766;>
+                <a class="dropdown-item" color: #e5dbdb; background-color: #425766; href="{% url 'logout' %} ">
                 Log Out</a>
               </div>
             </li>

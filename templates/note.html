@@ -10,19 +10,19 @@
   {% for note in object_list %}
     <div class="card">
       <div class="card-header">
-        <a href="{% url 'note_detail' note.pk %}"><i class="fas fa-file"></i> </a><span class="font-weight-bold">{{ note.text }}</span>  &middot;
+        <a href="{% url 'note_detail' note.pk %}"><i class="fa fa-file"></i> </a><span class="font-weight-bold">{{ note.text }}</span>  &middot;
         <br>
-        <span class="text-muted"><i class="glyphicon glyphicon-user"></i> {{ note.author }} &nbsp;<span class="glyphicon glyphicon-option-vertical"></span>&nbsp;
-         <span class="glyphicon glyphicon-calendar"></span> {{ note.created }}</span>
+        <span class="text-muted"><span class="fa fa-user"></span> {{ note.author }} &nbsp;|&nbsp;
+         <i class="fa fa-calendar"></i> {{ note.created }}</span>
       </div> 
       <div class="card-body">
-        <a href="{% url 'note_edit' note.pk %}"><span class="glyphicon glyphicon-pencil">  </span> </a>  &nbsp;<span class="glyphicon glyphicon-option-vertical"></span>&nbsp;
-         <a href="{% url 'note_delete' note.pk %}"><span class="glyphicon glyphicon-trash"></span></a>
+        <a href="{% url 'note_edit' note.pk %}"><i class="fa fa-pencil"></i> </a>  &nbsp;|&nbsp;
+         <a href="{% url 'note_delete' note.pk %}"><i class="fa fa-trash"></i></a>
       </div>
     </div>
     <br />
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
   {% endfor %}
   
 {% endblock content %}
