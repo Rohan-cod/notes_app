@@ -4,6 +4,9 @@ from .models import Note
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .forms import NoteForm
 from django.urls import reverse_lazy
+from django.template.loader import render_to_string
+from django.http import JsonResponse
+from django.shortcuts import render
 
 
 class NoteListView(LoginRequiredMixin, ListView):
@@ -51,6 +54,29 @@ class NoteDetailView(LoginRequiredMixin, DetailView):
 	model = Note
 	template_name = 'note_detail.html'
 	login_url = 'login'
+
+def search_view(request):
+	ctx = {}
+	url_parameter = request.GET.get("q")
+
+	if url_parameter:
+		notes = Note.objects.filter(text__icontains=url_parameter)
+	else:
+		notes = Note.objects.all()
+
+	ctx["notes"] = notes
+
+	if request.is_ajax():
+		html = render_to_string(
+			template_name="notes-results-partial.html", 
+			context={"notes": notes}
+		)
+
+		data_dict = {"html_from_view": html}
+
+		return JsonResponse(data=data_dict, safe=False)
+
+	return render(request, "note_search.html", context=ctx)
 
 
 
