@@ -1,6 +1,39 @@
 <!Doctype html>
 <html lang="en">
   <head>
+
+    <style type="text/css">
+      #button {
+        display: inline-block;
+        background-color: #FF9800;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 4px;
+        margin: 30px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        transition: background-color .3s;
+        z-index: 1000;
+      }
+      #button:hover {
+        cursor: pointer;
+        background-color: #333;
+      }
+      #button:active {
+        background-color: #555;
+      }
+      #button::after {
+        content: "\f077";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 2em;
+        line-height: 50px;
+        color: #fff;
+      }
+    </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,
@@ -63,7 +96,9 @@
     <div class="container">
 
       {% block content %}
+
       {% endblock content %}
+      <a id="button"></a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"\ integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4\
@@ -115,6 +150,29 @@
           
           scheduled_function = setTimeout(ajax_call, delay_by_in_ms, endpoint, request_parameters)
       })
+    </script>
+
+    <script>
+
+      jQuery(document).ready(function() {
+        
+        var btn = $('#button');
+
+        $(window).scroll(function() {
+          if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+          } else {
+            btn.removeClass('show');
+          }
+        });
+
+        btn.on('click', function(e) {
+          e.preventDefault();
+          $('html, body').animate({scrollTop:0}, '300');
+        });
+
+      });
+
     </script>
     
 
