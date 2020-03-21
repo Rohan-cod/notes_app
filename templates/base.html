@@ -33,6 +33,15 @@
         line-height: 50px;
         color: #fff;
       }
+      .footer {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        background-color: #E0E0E0;
+        text-align: center;
+      }
     </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -51,7 +60,6 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="https://github.com/Rohan-cod/notes_app"><i class="fa fa-github"></i></a>
       <a class="navbar-brand" href="{% url 'note_list' %}">Notes</a>
       {% if user.is_authenticated %}
         <ul class="navbar-nav mr-auto">
@@ -100,6 +108,14 @@
 
       {% endblock content %}
       <a id="button"></a>
+    </div>
+
+    <div class="footer">
+      <a href="https://www.linkedin.com/in/rohang4837b4124/"><i class="fa fa-linkedin-square w3-xlarge"></i></a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://github.com/Rohan-cod/notes_app"><i class="fa fa-github w3-xlarge"></i></a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://api.whatsapp.com/send?phone=+917006482743"><i class="fa fa-whatsapp w3-xlarge"></i></a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"\ integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4\
