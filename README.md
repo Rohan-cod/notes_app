@@ -1,6 +1,16 @@
 # Notes App
 A note taking app using django framework. Frontend using html, css and bootstrap. Add notes so you never miss anything. A note can only be edited or deleted by the user who created it. There is user authentication, a wonderful search bar made using javascript, jquery and AJAX and many more features.
 
+## Highlights
+
+  * User Authentication
+  * Change Password functionality
+  * Real time search
+  * Back to top button
+  * Pagination(5 notes per page)
+  * Edit and delete options restricted to the author of the notes
+  * User friendly interface
+  
 ## Requirements
 
 Python 3.7  
