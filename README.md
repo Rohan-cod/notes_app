@@ -5,6 +5,7 @@ A note taking app using django framework. Frontend using html, css and bootstrap
 
   * User Authentication
   * Change Password functionality
+  * My notes page
   * Real time search
   * Back to top button
   * Pagination(5 notes per page)
