@@ -8,10 +8,6 @@
 				<br>
 				<span class="text-muted"><span class="fa fa-user"></span> {{ note.author }} &nbsp;|&nbsp;
 				 <i class="fa fa-calendar"></i> {{ note.created }}</span>
-			</div> 
-			<div class="card-body">
-				<a href="{% url 'note_edit' note.pk %}"><i class="fa fa-pencil"></i> </a>  &nbsp;|&nbsp;
-				 <a href="{% url 'note_delete' note.pk %}"><i class="fa fa-trash"></i></a>
 			</div>
 		</div>
 		<br />

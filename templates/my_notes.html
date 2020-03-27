@@ -5,7 +5,7 @@
   <h1>Django Note Taking App</h1>
   <hr>
 
-  <h2>Notes</h2>
+  <h2>Notes by {{user.username}}</h2>
 
   {% for note in object_list %}
     <div class="card">
@@ -15,12 +15,10 @@
         <span class="text-muted"><span class="fa fa-user"></span> {{ note.author }} &nbsp;|&nbsp;
          <i class="fa fa-calendar"></i> {{ note.created }}</span>
       </div>
-      {% if note.author == user %}
       <div class="card-body">
         <a href="{% url 'note_edit' note.pk %}"><i class="fa fa-pencil"></i> </a>  &nbsp;|&nbsp;
          <a href="{% url 'note_delete' note.pk %}"><i class="fa fa-trash"></i></a>
       </div>
-      {% endif %}
     </div>
     <br />
 

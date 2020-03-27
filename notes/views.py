@@ -14,6 +14,17 @@ class NoteListView(LoginRequiredMixin, ListView):
 	template_name = 'note.html'
 	login_url = 'login'
 	paginate_by = 5
+	ordering = ['-created']
+
+class MyNoteListView(LoginRequiredMixin, ListView):
+	model = Note
+	template_name = 'my_notes.html'
+	login_url = 'login'
+	paginate_by = 5
+	ordering = ['-created']
+	def get_queryset(self):
+		return Note.objects.filter(author=self.request.user)
+
 
 class NoteCreateView(LoginRequiredMixin, CreateView):
 	model = Note

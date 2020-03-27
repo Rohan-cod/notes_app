@@ -84,6 +84,8 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right"\
               aria-labelledby="userMenu" >
+                <a class="dropdown-item" href="{% url 'my_notes_list' %}">My notes</a>
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'change_password' %}">Change password</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'logout' %} ">

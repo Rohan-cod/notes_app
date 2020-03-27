@@ -5,9 +5,10 @@
 
   <h2>{{ object.text }}</h2>
     <p><i class="fa fa-user"></i> {{ object.author }} &nbsp;|&nbsp; <i class="fa fa-calendar"></i> {{ object.created }}</p>
-
+  {% if object.author == user %}
   <p><a href="{% url 'note_edit' note.pk %}"><i class="fa fa-pencil"></i></a> &nbsp;|&nbsp;
     <a href="{% url 'note_delete' note.pk %}"><i class="fa fa-trash"></i></a></p>
+  {% endif %}
   <p>Back to <a href="{% url 'note_list' %}"><i class="fa fa-home"></i></a></p>
 </div>
 {% endblock content %}
